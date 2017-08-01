@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nss-P7-y2b">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Spark_game" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,184 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to use Cisco Spark SDK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFJ-GT-XUQ">
+                                <rect key="frame" x="71" y="72" width="257" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MH-CR-dFO">
+                                <rect key="frame" x="96" y="318" width="183" height="30"/>
+                                <state key="normal" title="Log in  with Spark Account"/>
+                                <connections>
+                                    <action selector="sparkLoginWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NDb-VM-ohQ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spark" highlightedImage="Spark" translatesAutoresizingMaskIntoConstraints="NO" id="KBp-VJ-gpt">
+                                <rect key="frame" x="107" y="113" width="160" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="BAO-BR-PAZ"/>
+                                    <constraint firstAttribute="height" constant="140" id="oud-pH-eCW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wd-KT-Xeh">
+                                <rect key="frame" x="166.5" y="266" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzB-Pa-Kn9">
+                                <rect key="frame" x="157.5" y="380" width="60" height="30"/>
+                                <state key="normal" title="goodbye"/>
+                                <connections>
+                                    <action selector="signOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3fZ-Bo-tsD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KBp-VJ-gpt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1zO-uw-fLm"/>
+                            <constraint firstItem="9MH-CR-dFO" firstAttribute="top" secondItem="2Wd-KT-Xeh" secondAttribute="bottom" constant="31" id="CS8-6C-cDd"/>
+                            <constraint firstItem="GzB-Pa-Kn9" firstAttribute="top" secondItem="9MH-CR-dFO" secondAttribute="bottom" constant="32" id="HmY-8a-mw2"/>
+                            <constraint firstItem="LFJ-GT-XUQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="55" id="IAi-TX-6gA"/>
+                            <constraint firstItem="KBp-VJ-gpt" firstAttribute="top" secondItem="LFJ-GT-XUQ" secondAttribute="bottom" constant="20" id="JEE-p3-rWs"/>
+                            <constraint firstItem="LFJ-GT-XUQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Jgu-Ve-SBN"/>
+                            <constraint firstItem="GzB-Pa-Kn9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NbK-K3-Rps"/>
+                            <constraint firstItem="2Wd-KT-Xeh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YyI-sT-sd6"/>
+                            <constraint firstItem="9MH-CR-dFO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q4g-eZ-6ru"/>
+                            <constraint firstItem="9MH-CR-dFO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vvQ-NR-CDK"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="Spark" id="FOz-XJ-0uB"/>
+                    <navigationItem key="navigationItem" id="3A5-RK-ShY"/>
+                    <connections>
+                        <outlet property="loginButton" destination="9MH-CR-dFO" id="5DR-XE-Gwy"/>
+                        <outlet property="loginPrompt" destination="2Wd-KT-Xeh" id="hBb-tM-aXq"/>
+                        <outlet property="signoutButton" destination="GzB-Pa-Kn9" id="pQD-2e-4P2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1405.5999999999999" y="767.76611694152928"/>
+        </scene>
+        <!--Gaming View Controller-->
+        <scene sceneID="tA4-AK-AbO">
+            <objects>
+                <viewController storyboardIdentifier="GamingViewController" id="z9S-NN-bXN" customClass="GamingViewController" customModule="Spark_game" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wU8-PH-xWe"/>
+                        <viewControllerLayoutGuide type="bottom" id="NRN-ge-LoJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L1D-Ic-wis">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="login now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXH-n1-N6i">
+                                <rect key="frame" x="73" y="171" width="190" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D1i-w4-lkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2296.8000000000002" y="767.76611694152928"/>
+        </scene>
+        <!--Items View Controller-->
+        <scene sceneID="zp2-ud-jOJ">
+            <objects>
+                <viewController storyboardIdentifier="ItemsViewController" id="GJj-bz-7Kl" customClass="ItemsViewController" customModule="Spark_game" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="99" sectionHeaderHeight="28" sectionFooterHeight="28" id="2qx-3K-kaN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="KXs-BM-AjX" detailTextLabel="hhm-tg-Shk" style="IBUITableViewCellStyleValue1" id="Zyw-MA-d4N">
+                                <rect key="frame" x="0.0" y="28" width="375" height="99"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zyw-MA-d4N" id="XSz-Kr-Wnk">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="98.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KXs-BM-AjX">
+                                            <rect key="frame" x="15" y="39" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hhm-tg-Shk">
+                                            <rect key="frame" x="301" y="39" width="59" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7wj-dm-UXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3042" y="35"/>
+        </scene>
+        <!--map-->
+        <scene sceneID="1nJ-AZ-ODy">
+            <objects>
+                <viewController id="YYR-HV-qOA" customClass="MapViewController" customModule="Spark_game" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="map" image="MapIcon" id="TsY-qg-zub"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o2N-3R-E8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2344.8000000000002" y="34.632683658170919"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OOd-6N-1jV">
+            <objects>
+                <navigationController id="Nss-P7-y2b" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="33W-sy-4NY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dFu-e4-so4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7h-pt-G9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15" y="553"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="moJ-2u-ZyH">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kmb-xn-pOP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="QY0-lW-Kz2">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="TX6-tr-2sS"/>
+                        <segue destination="YYR-HV-qOA" kind="relationship" relationship="viewControllers" id="Ef4-IQ-TbT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YBq-ge-bEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1405.5999999999999" y="34.632683658170919"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MapIcon" width="48" height="32"/>
+        <image name="Spark" width="77" height="77"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dFu-e4-so4"/>
+    </inferredMetricsTieBreakers>
 </document>
