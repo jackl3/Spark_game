@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 //    let redirectUri = "KitchenSink://response"
     private var oauthenticator: OAuthAuthenticator!
     private var loginStatus: Bool = false
+    var spark: Spark?
     
     @IBOutlet weak var loginPrompt: UILabel!
     @IBOutlet weak var signoutButton: UIButton!
@@ -26,7 +27,14 @@ class ViewController: UIViewController {
 
     
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destionation =  segue.destination as? GamingViewController {
+            destionation.oauthenticator = self.oauthenticator
+            destionation.spark = self.spark
+            print(self.spark)
+            print(destionation.spark)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +42,8 @@ class ViewController: UIViewController {
         // is to be used to authenticate a user on Cisco Spark.
         
         oauthenticator = OAuthAuthenticator(clientId: clientId, clientSecret: clientSecret, scope: scope, redirectUri: redirectUri)   //we cant' use let to define oauthenticator 
-        //let spark = Spark(authenticator: authenticator)
-        
+        spark = Spark(authenticator: oauthenticator)
+        print("spark value is \(String(describing: spark))")
         if !oauthenticator.authorized {
             print("you are not authorized")
             loginStatus = false
@@ -62,12 +70,13 @@ class ViewController: UIViewController {
         // further user interaction.
         print(oauthenticator)
         if oauthenticator!.authorized {
-            //showApplicationHome()
+            showApplicationHome()
             loginPrompt.textColor = UIColor.green
             loginPrompt.text = "Welcome to use Cisco Spark."
             print("thanks for login")
             signoutButton.isHidden = false
             loginButton.isHidden = true
+//            self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)  redirect to specific indentifier segue
             }
         else {
             loginPrompt.textColor = UIColor.blue
@@ -82,7 +91,8 @@ class ViewController: UIViewController {
     @IBAction func sparkLogin(sender: AnyObject){
         
         //let authenticator = OAuthAuthenticator(clientId: clientId, clientSecret: clientSecret, scope: scope, redirectUri: redirectUri)
-        //let spark = Spark(authenticator: authenticator)
+        let spark = Spark(authenticator: oauthenticator)
+        print("spark value is \(spark)")
         
         if !oauthenticator.authorized {
             print("you need to login first")
@@ -101,9 +111,11 @@ class ViewController: UIViewController {
     }
     
     private func showApplicationHome() {
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "GamingViewController") as! GamingViewController
+        self.performSegue(withIdentifier: "pass_spark_data", sender: self)
+
+//        let viewController = storyboard?.instantiateViewController(withIdentifier: "GamingViewController") as! GamingViewController
         //print(viewController)
-        navigationController?.pushViewController(viewController, animated: true)
+        //navigationController?.pushViewController(viewController, animated: true)
         print("redirect to new view")
     }
     
